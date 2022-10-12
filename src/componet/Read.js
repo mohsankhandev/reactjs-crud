@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 const Read = () => {
 
   const [data, SetData] = useState([]);
+  const [tabledark, SetTabledark] = useState('');
+
 
   function getData() {
     axios.get("https://6344779e242c1f347f86fb86.mockapi.io/CURDJS").then((res) => {
@@ -39,9 +41,27 @@ function CallLocalStorage(id,email,password){
 
 
   return (
+    
     <div>
+<div className="form-check form-switch">
+  <input className="form-check-input" type="checkbox" onClick={()=>{
+    if (tabledark === "table-dark") SetTabledark('');
+    else SetTabledark("table-dark")
+  }}/>
+</div>
 
-      <table className="table">
+
+
+<div className='d-flex justify-content-between m-2'>
+<h2>Create</h2>
+<Link to="/">
+<button className='btn btn-primary'>Create New</button>
+</Link>
+</div>
+
+
+
+       <table className={`table ${tabledark}`}>
         <thead>
           <tr>
             <th scope="col">email</th>

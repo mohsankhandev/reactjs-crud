@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import {useState} from 'react';
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
   
 
 const Create = () => {
@@ -31,7 +31,12 @@ const Create = () => {
 
   return (
 <>
+<div className='d-flex justify-content-between m-2'>
 <h2>Create</h2>
+<Link to="/read">
+<button className='btn btn-primary'> Show List</button>
+</Link>
+</div>
 <form>
   <div class="mb-3">
     <label  className="form-label">Email address</label>
