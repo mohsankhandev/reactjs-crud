@@ -22,8 +22,11 @@ const Create = () => {
         email:email,
        password:password,
        header,
+     }).then(()=>{
+      history('/read');
+
      });
-     history('/read');
+      
 }
 
   return (
